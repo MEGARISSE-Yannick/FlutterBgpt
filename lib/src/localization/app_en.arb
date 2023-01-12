@@ -1,0 +1,6 @@
+{
+  "appTitle": "flutter_app_gpt",
+  "@appTitle": {
+    "description": "The title of the application"
+  }
+}
