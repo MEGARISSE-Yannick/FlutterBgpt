@@ -19,7 +19,19 @@ class ProductList extends StatelessWidget {
             leading: Text(product.name),
             title: Text(product.price.toString()),
             subtitle: Text(product.quantity.toString()),
-            trailing: Text(product.rank.toString()),
+            trailing: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                Text(product.rank.toString()),
+                SizedBox(width: 8),
+                IconButton(
+                  icon: Icon(Icons.delete),
+                  onPressed: () {
+                    productProvider.deleteProduct(index);
+                  },
+                ),
+              ],
+            ),
             onTap: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
